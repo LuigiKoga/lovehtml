@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amor</title>
+</head>
+<body>
+    <h2>Você me ama?</h2>
+    <form id="respostaForm">
+        <input type="text" id="resposta" name="resposta" />
+        <input type="submit" value="Enviar" />
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+        document.getElementById('respostaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            
+            var resposta = document.getElementById('resposta').value.trim().toLowerCase();
+            var mensagem = document.getElementById('mensagem');
+
+            if (resposta === 'sim') {
+                mensagem.innerHTML = 'Eu também te amo &lt;3';
+            } else {
+                mensagem.innerHTML = 'Resposta errada! Tente novamente.';
+            }
+        });
+    </script>
+</body>
+</html>
